@@ -7,39 +7,63 @@
 <meta name="description" content="r.com, Inc builds and runs independent consumer websites.">
 <link rel="canonical" href="https://rdotcom.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--fg:#111;--muted:#666;--line:#e5e5e5;--accent:#2563eb}
+:root{--blue:#1A98C3;--blue-dark:#0F6D8E;--ink:#0B3546;--muted:#4B6573;--tint:#EAF6FB;--tint2:#F5FBFD;--line:#D6ECF4}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg);background:#fff;line-height:1.6}
-main{max-width:680px;margin:0 auto;padding:56px 24px 40px}
-h1{font-size:2.5rem;margin:0 0 8px;letter-spacing:-.02em}
-.lead{font-size:1.2rem;color:var(--muted);margin:0 0 56px}
-h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 16px}
-ul{list-style:none;padding:0;margin:0 0 56px}
-li{border-top:1px solid var(--line);padding:18px 0}
-li:last-child{border-bottom:1px solid var(--line)}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.site{font-weight:600;font-size:1.1rem}
-.desc{display:block;color:var(--muted)}
-header{max-width:680px;margin:0 auto;padding:28px 24px 0}.logo img{display:block;height:40px;width:auto}.logo{font-weight:800;font-size:1.6rem;letter-spacing:-.04em;color:var(--fg)}.logo span{color:var(--accent)}
-footer{max-width:680px;margin:0 auto;padding:24px;color:var(--muted);font-size:.9rem}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--tint2);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue-dark)}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+header{background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;height:72px}
+.logo img{display:block;height:34px;width:auto}
+.hero{background:linear-gradient(135deg,#fff 0%,var(--tint) 55%,#D3EEF8 100%);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(26,152,195,.18),rgba(26,152,195,0) 70%)}
+.hero .wrap{padding-top:88px;padding-bottom:88px;position:relative;z-index:1}
+h1{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:0 0 16px}
+h1 span{color:var(--blue)}
+.lead{font-size:clamp(1.1rem,2.4vw,1.35rem);color:var(--muted);margin:0;max-width:34ch}
+section{padding:64px 0 8px}
+h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--blue-dark);margin:0 0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 26px 24px;text-decoration:none;color:var(--ink);border-top:4px solid var(--blue);box-shadow:0 1px 2px rgba(11,53,70,.04);transition:transform .2s ease,box-shadow .2s ease,border-color .2s}
+.card:hover,.card:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px rgba(15,109,142,.14);border-color:var(--blue)}
+.card .site{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:1.15rem;color:var(--blue-dark)}
+.card .site::after{content:"\2197";font-size:1.1rem;color:var(--blue);transition:transform .2s}
+.card:hover .site::after{transform:translate(3px,-3px)}
+.card .desc{display:block;color:var(--muted);margin-top:6px}
+.contact{display:flex;flex-wrap:wrap;gap:12px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 20px;font-weight:500;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.pill:hover,.pill:focus-visible{background:var(--blue-dark);border-color:var(--blue-dark);color:#fff}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+footer{margin-top:72px;border-top:1px solid var(--line);background:#fff}
+footer .wrap{padding-top:24px;padding-bottom:24px;color:var(--muted);font-size:.9rem}
+@media (max-width:560px){.hero .wrap{padding-top:56px;padding-bottom:56px}section{padding-top:44px}.pill{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
-<header><a class="logo" href="/" aria-label="r.com home"><img src="/logo.jpg" alt="r.com" height="40"></a></header>
-<main>
-<h1>r.com, Inc</h1>
+<header><div class="wrap"><a class="logo" href="/" aria-label="r.com home"><img src="/logo.png" alt="r.com" height="34"></a></div></header>
+<div class="hero"><div class="wrap">
+<h1>r<span>.</span>com, Inc</h1>
 <p class="lead">We build and run independent consumer websites.</p>
+</div></div>
+<main class="wrap">
+<section>
 <h2>Our sites</h2>
-<ul>
-<li><a class="site" href="https://rvandboatstorage.co" target="_blank" rel="noopener">rvandboatstorage.co</a><span class="desc">RV and boat storage directory</span></li>
-<li><a class="site" href="https://www.stubsued.com" target="_blank" rel="noopener">stubsued.com</a><span class="desc">StubHub buyer-protection guides</span></li>
-</ul>
+<div class="cards">
+<a class="card" href="https://rvandboatstorage.co" target="_blank" rel="noopener"><span class="site">rvandboatstorage.co</span><span class="desc">RV and boat storage directory</span></a>
+<a class="card" href="https://www.stubsued.com" target="_blank" rel="noopener"><span class="site">stubsued.com</span><span class="desc">StubHub buyer-protection guides</span></a>
+</div>
+</section>
+<section>
 <h2>Contact</h2>
-<p><a href="mailto:contact@rdotcom.com">contact@rdotcom.com</a></p>
-<p><a href="tel:+15097208681">(509) 720-8681</a></p>
+<div class="contact">
+<a class="pill" href="mailto:contact@rdotcom.com">&#9993; contact@rdotcom.com</a>
+<a class="pill" href="tel:+15097208681">&#9742; (509) 720-8681</a>
+</div>
+</section>
 </main>
-<footer>&copy; 2026 r.com, Inc</footer>
+<footer><div class="wrap">&copy; 2026 r.com, Inc</div></footer>
 </body>
 </html>
