@@ -11,7 +11,7 @@
 :root{--fg:#111;--muted:#666;--line:#e5e5e5;--accent:#2563eb}
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--fg);background:#fff;line-height:1.6}
-main{max-width:680px;margin:0 auto;padding:80px 24px 40px}
+main{max-width:680px;margin:0 auto;padding:56px 24px 40px}
 h1{font-size:2.5rem;margin:0 0 8px;letter-spacing:-.02em}
 .lead{font-size:1.2rem;color:var(--muted);margin:0 0 56px}
 h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 16px}
@@ -22,10 +22,12 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .site{font-weight:600;font-size:1.1rem}
 .desc{display:block;color:var(--muted)}
+header{max-width:680px;margin:0 auto;padding:28px 24px 0}.logo{font-weight:800;font-size:1.6rem;letter-spacing:-.04em;color:var(--fg)}.logo span{color:var(--accent)}
 footer{max-width:680px;margin:0 auto;padding:24px;color:var(--muted);font-size:.9rem}
 </style>
 </head>
 <body>
+<header><a class="logo" href="/" aria-label="r.com home">r<span>.</span>com</a></header>
 <main>
 <h1>r.com, Inc</h1>
 <p class="lead">We build and run independent consumer websites.</p>
