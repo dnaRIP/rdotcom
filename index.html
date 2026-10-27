@@ -7,47 +7,41 @@
 <meta name="description" content="r.com, Inc builds and runs independent consumer websites.">
 <link rel="canonical" href="https://rdotcom.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#1A98C3;--blue-dark:#0F6D8E;--ink:#0B3546;--muted:#4B6573;--tint:#EAF6FB;--tint2:#F5FBFD;--line:#D6ECF4}
+:root{--navy:#102542;--teal:#138a8a;--gold:#ffd666;--pale:#d2deeb;--ink:#102542;--muted:#475972}
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--tint2);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:var(--blue-dark)}
-.wrap{max-width:880px;margin:0 auto;padding:0 24px}
-header{background:#fff;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;height:72px}
-.logo img{display:block;height:34px;width:auto}
-.hero{background:linear-gradient(135deg,#fff 0%,var(--tint) 55%,#D3EEF8 100%);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(26,152,195,.18),rgba(26,152,195,0) 70%)}
-.hero .wrap{padding-top:88px;padding-bottom:88px;position:relative;z-index:1}
-h1{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:0 0 16px}
-h1 span{color:var(--blue)}
-.lead{font-size:clamp(1.1rem,2.4vw,1.35rem);color:var(--muted);margin:0;max-width:34ch}
-section{padding:64px 0 8px}
-h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--blue-dark);margin:0 0 20px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 26px 24px;text-decoration:none;color:var(--ink);border-top:4px solid var(--blue);box-shadow:0 1px 2px rgba(11,53,70,.04);transition:transform .2s ease,box-shadow .2s ease,border-color .2s}
-.card:hover,.card:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px rgba(15,109,142,.14);border-color:var(--blue)}
-.card .site{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:1.15rem;color:var(--blue-dark)}
-.card .site::after{content:"\2197";font-size:1.1rem;color:var(--blue);transition:transform .2s}
-.card:hover .site::after{transform:translate(3px,-3px)}
-.card .desc{display:block;color:var(--muted);margin-top:6px}
-.contact{display:flex;flex-wrap:wrap;gap:12px}
-.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 20px;font-weight:500;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
-.pill:hover,.pill:focus-visible{background:var(--blue-dark);border-color:var(--blue-dark);color:#fff}
-a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-footer{margin-top:72px;border-top:1px solid var(--line);background:#fff}
-footer .wrap{padding-top:24px;padding-bottom:24px;color:var(--muted);font-size:.9rem}
-@media (max-width:560px){.hero .wrap{padding-top:56px;padding-bottom:56px}section{padding-top:44px}.pill{width:100%;justify-content:center}}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#f4f7fb;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+.hero{background:var(--navy);color:#fff;padding:96px 0 88px}
+h1{font-size:clamp(2.6rem,8vw,4.5rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:0 0 18px}
+h1 span{color:var(--gold)}
+.lead{color:var(--pale);font-size:clamp(1.1rem,2.6vw,1.4rem);margin:0 0 10px}
+.lead b{color:#fff;font-weight:600}
+.url{color:var(--gold);font-weight:700;font-size:1.15rem;margin:0}
+.band{background:var(--teal);height:14px}
+section{padding:56px 0 8px}
+h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:#0e6e6e;margin:0 0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{display:block;background:#fff;border-radius:14px;padding:26px;text-decoration:none;color:var(--ink);border-top:5px solid var(--teal);box-shadow:0 2px 6px rgba(16,37,66,.08);transition:transform .2s,box-shadow .2s}
+.card:hover,.card:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px rgba(16,37,66,.16);outline:none}
+.card:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.site{font-weight:700;font-size:1.25rem;display:flex;justify-content:space-between}
+.site::after{content:"\2197";color:var(--teal)}
+.desc{display:block;color:var(--muted);margin-top:6px}
+.contact{display:flex;flex-wrap:wrap;gap:12px;padding-bottom:56px}
+.pill{background:var(--navy);color:#fff;border-radius:999px;padding:12px 20px;text-decoration:none;font-weight:500}
+.pill:hover,.pill:focus-visible{background:#0e6e6e}
+footer{background:var(--teal);color:#fff;padding:22px 0;font-size:.95rem}
+footer a{color:#fff}
 </style>
 </head>
 <body>
-<header><div class="wrap"><a class="logo" href="/" aria-label="r.com home"><img src="/logo.png" alt="r.com" height="34"></a></div></header>
-<div class="hero"><div class="wrap">
+<header class="hero"><div class="wrap">
 <h1>r<span>.</span>com, Inc</h1>
-<p class="lead">We build and run independent consumer websites.</p>
-</div></div>
+<p class="lead">Home of <b>rvandboatstorage.co</b> and <b>stubsued.com</b></p>
+<p class="url">rdotcom.com</p>
+</div></header>
+<div class="band" aria-hidden="true"></div>
 <main class="wrap">
 <section>
 <h2>Our sites</h2>
@@ -65,6 +59,7 @@ footer .wrap{padding-top:24px;padding-bottom:24px;color:var(--muted);font-size:.
 </div>
 </section>
 </main>
-<footer><div class="wrap">&copy; 2026 r.com, Inc</div></footer>
+<footer><div class="wrap">&copy; 2026 r.com, Inc · We build and run independent consumer websites. · <a href="https://x.com/rdotcominc" rel="me noopener" target="_blank">X: @rdotcominc</a></div></footer>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"r.com, Inc","url":"https://rdotcom.com","sameAs":["https://x.com/rdotcominc"]}</script>
 </body>
 </html>
