@@ -38,7 +38,10 @@ h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em
 .pill:hover,.pill:focus-visible{background:var(--blue-dark);border-color:var(--blue-dark);color:#fff}
 a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 footer{margin-top:72px;border-top:1px solid var(--line);background:#fff}
-footer .wrap{padding-top:24px;padding-bottom:24px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;align-items:center;gap:14px;padding-top:24px;padding-bottom:24px;color:var(--muted);font-size:.9rem}
+footer .x{display:inline-flex;color:inherit;line-height:0}
+footer .x:hover,footer .x:focus-visible{color:var(--blue-dark)}
+footer .x svg{display:block;width:15px;height:15px}
 @media (max-width:560px){.hero .wrap{padding-top:56px;padding-bottom:56px}section{padding-top:44px}.pill{width:100%;justify-content:center}}
 </style>
 </head>
@@ -65,6 +68,6 @@ footer .wrap{padding-top:24px;padding-bottom:24px;color:var(--muted);font-size:.
 </div>
 </section>
 </main>
-<footer><div class="wrap">&copy; 2026 r.com, Inc</div></footer>
+<footer><div class="wrap">&copy; 2026 r.com, Inc <a class="x" href="https://x.com/rdotcominc" rel="me noopener" target="_blank" aria-label="Follow r.com, Inc on X"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></div></footer>
 </body>
 </html>
