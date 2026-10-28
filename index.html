@@ -45,6 +45,14 @@ h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:#0e6e6e;
 .contact{display:flex;flex-wrap:wrap;gap:12px;padding-bottom:56px}
 .pill{background:var(--navy);color:#fff;border-radius:999px;padding:12px 20px;text-decoration:none;font-weight:500}
 .pill:hover,.pill:focus-visible{background:#0e6e6e}
+.cform{max-width:560px;display:grid;gap:14px;background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 6px rgba(16,37,66,.08)}
+.cform label{display:grid;gap:6px;font-weight:600}
+.cform input,.cform textarea{font:inherit;font-size:16px;font-weight:400;min-height:44px;padding:10px 12px;border:1px solid #8a9aab;border-radius:8px}
+.cform button{font:inherit;font-weight:600;min-height:44px;border:0;border-radius:999px;background:var(--navy);color:#fff;cursor:pointer;justify-self:start;padding:0 24px}
+.cform button:hover,.cform button:focus-visible{background:#0e6e6e}
+.cform .note,.cform .msg{margin:0;color:var(--muted);font-size:.95rem}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.alt{padding-bottom:56px;color:var(--muted)}
 footer{background:var(--teal);color:#fff;padding:22px 0;font-size:.95rem}
 footer a{color:#fff}
 </style>
@@ -66,14 +74,28 @@ footer a{color:#fff}
 </section>
 <section>
 <h2>Contact</h2>
-<div class="contact">
-<a class="pill" href="mailto:contact@rdotcom.com">&#9993; contact@rdotcom.com</a>
-<a class="pill" href="mailto:jeff@rdotcom.com">&#9993; jeff@rdotcom.com</a>
-<a class="pill" href="tel:+15097208681">&#9742; (509) 720-8681</a>
-</div>
+<form class="cform" id="cform" method="post" action="https://www.stubsued.com/api/rdotcom/contact" novalidate>
+<label>Name<input name="name" required maxlength="120" autocomplete="name"></label>
+<label>Email<input name="email" type="email" required maxlength="254" autocomplete="email"></label>
+<label>Message<textarea name="message" required minlength="10" maxlength="5000" rows="5"></textarea></label>
+<label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+<button type="submit">Send message</button>
+<p class="note">We use what you send only to reply. See our <a href="/privacy.html">privacy note</a>.</p>
+<p class="msg" id="cmsg" role="status" aria-live="polite"></p>
+</form>
+<p class="alt">Or email <a href="mailto:contact@rdotcom.com">contact@rdotcom.com</a>.</p>
 </section>
 </main>
-<footer><div class="wrap">&copy; 2026 r.com, Inc · We build and run independent consumer websites. · <a href="https://x.com/rdotcominc" rel="me noopener" target="_blank">X: @rdotcominc</a><br>Site policies: rvandboatstorage.co <a href="https://rvandboatstorage.co/privacy/">Privacy</a> · <a href="https://rvandboatstorage.co/terms/">Terms</a> · stubsued.com <a href="https://www.stubsued.com/privacy">Privacy</a> · <a href="https://www.stubsued.com/terms">Terms</a></div></footer>
+<footer><div class="wrap">&copy; 2026 r.com, Inc · We build and run independent consumer websites. · <a href="https://x.com/rdotcominc" rel="me noopener" target="_blank">X: @rdotcominc</a><br><a href="/privacy.html">Privacy</a> · Site policies: rvandboatstorage.co <a href="https://rvandboatstorage.co/privacy/" target="_blank" rel="noopener">Privacy</a> · <a href="https://rvandboatstorage.co/terms/" target="_blank" rel="noopener">Terms</a> · stubsued.com <a href="https://www.stubsued.com/privacy" target="_blank" rel="noopener">Privacy</a> · <a href="https://www.stubsued.com/terms" target="_blank" rel="noopener">Terms</a></div></footer>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"r.com, Inc","url":"https://rdotcom.com","sameAs":["https://x.com/rdotcominc"]}</script>
+<script>
+(function(){var f=document.getElementById('cform'),m=document.getElementById('cmsg'),t0=Date.now();if(!f||!window.fetch)return;
+f.addEventListener('submit',function(e){e.preventDefault();var b={name:f.name.value.trim(),email:f.email.value.trim(),message:f.message.value.trim(),website:f.website.value,ts:t0};
+if(!b.name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(b.email)||b.message.length<10){m.textContent='Please add your name, a valid email and a message of at least 10 characters.';return}
+var btn=f.querySelector('button');btn.disabled=true;m.textContent='Sending\u2026';
+fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}).then(function(r){return r.json().then(function(d){if(!r.ok)throw new Error(d.error||'Something went wrong.');return d})})
+.then(function(){f.reset();m.textContent='Thanks, your message was sent. We\u2019ll reply by email.'})
+.catch(function(err){m.textContent=(err&&err.message)||'Something went wrong. Please email contact@rdotcom.com.'}).then(function(){btn.disabled=false})})})();
+</script>
 </body>
 </html>
