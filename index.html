@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="r.com, Inc builds and runs independent consumer websites.">
 <meta name="twitter:image" content="https://rdotcom.com/og.png">
 <style>
-:root{--navy:#102542;--teal:#138a8a;--gold:#ffd666;--pale:#d2deeb;--ink:#102542;--muted:#475972}
+:root{--navy:#102542;--teal:#138a8a;--teal-deep:#0e7575;--gold:#ffd666;--pale:#d2deeb;--ink:#102542;--muted:#475972}
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#f4f7fb;line-height:1.6}
 .wrap{max-width:960px;margin:0 auto;padding:0 24px}
@@ -53,8 +53,27 @@ h2{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:#0e6e6e;
 .cform .note,.cform .msg{margin:0;color:var(--muted);font-size:.95rem}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
 .alt{padding-bottom:56px;color:var(--muted)}
-footer{background:var(--teal);color:#fff;padding:22px 0;font-size:.95rem}
-footer a{color:#fff}
+main a:not(.card),main a:not(.card):visited{color:var(--teal-deep);text-decoration:underline;text-decoration-color:var(--teal);text-decoration-thickness:1.5px;text-underline-offset:.18em}
+main a:not(.card):hover,main a:not(.card):focus-visible{color:var(--navy);text-decoration-color:var(--navy);text-decoration-thickness:2px;background:#e5f3f3}
+main a:not(.card):focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:2px}
+footer{background:var(--teal-deep);color:#fff;padding:32px 0 40px;font-size:.95rem}
+.foot-blurb{margin:0 0 20px}
+.foot-groups{display:grid;grid-template-columns:max-content 1fr;gap:28px 64px;align-items:start}
+.foot-label{margin:0 0 4px;font-weight:700}
+.foot-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 18px}
+.site-groups{display:flex;flex-wrap:wrap;gap:8px 40px}
+.site-group{display:flex;flex-direction:column;align-items:flex-start;min-width:12rem}
+.site-group>.site-name{font-weight:700}
+.site-group .foot-links{flex-direction:column;align-items:flex-start;gap:0;margin:2px 0 0 2px;padding-left:12px;border-left:2px solid rgba(255,255,255,.55)}
+footer a,footer a:visited{color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;white-space:nowrap;display:inline-flex;align-items:center}
+footer a:hover,footer a:focus-visible{color:#fff;text-decoration-color:var(--gold);text-decoration-thickness:3px}
+footer a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
+@media (max-width:720px){
+.foot-groups{grid-template-columns:1fr;gap:18px}
+.foot-links{flex-direction:column;align-items:flex-start;gap:0}
+.site-groups{flex-direction:column;align-items:stretch}
+footer a,footer a:visited{min-height:44px}
+}
 </style>
 </head>
 <body>
@@ -72,7 +91,7 @@ footer a{color:#fff}
 <a class="card" href="https://www.stubsued.com" target="_blank" rel="noopener"><span class="site">stubsued.com</span><span class="desc">StubHub buyer-protection guides</span></a>
 </div>
 </section>
-<section>
+<section id="contact">
 <h2>Contact</h2>
 <form class="cform" id="cform" method="post" action="https://www.stubsued.com/api/rdotcom/contact" novalidate>
 <label>Name<input name="name" required maxlength="120" autocomplete="name"></label>
@@ -86,7 +105,38 @@ footer a{color:#fff}
 <p class="alt">Or email <a href="mailto:contact@rdotcom.com">contact@rdotcom.com</a>.</p>
 </section>
 </main>
-<footer><div class="wrap">&copy; 2026 r.com, Inc · We build and run independent consumer websites. · <a href="https://x.com/rdotcominc" rel="me noopener" target="_blank">X: @rdotcominc</a><br><a href="/privacy.html">Privacy</a> · Site policies: <a href="https://rvandboatstorage.co/" target="_blank" rel="noopener">rvandboatstorage.co</a> <a href="https://rvandboatstorage.co/privacy/" target="_blank" rel="noopener">Privacy</a> · <a href="https://rvandboatstorage.co/terms/" target="_blank" rel="noopener">Terms</a> · <a href="https://www.stubsued.com/" target="_blank" rel="noopener">stubsued.com</a> <a href="https://www.stubsued.com/privacy" target="_blank" rel="noopener">Privacy</a> · <a href="https://www.stubsued.com/terms" target="_blank" rel="noopener">Terms</a></div></footer>
+<footer><div class="wrap foot">
+<p class="foot-blurb">&copy; 2026 r.com, Inc. We build and run independent consumer websites.</p>
+<div class="foot-groups">
+<nav class="foot-group" aria-label="rdotcom">
+<p class="foot-label">rdotcom</p>
+<ul class="foot-links">
+<li><a href="/privacy.html">Privacy</a></li>
+<li><a href="/#contact">Contact</a></li>
+<li><a href="https://x.com/rdotcominc" rel="me noopener" target="_blank">X: @rdotcominc</a></li>
+</ul>
+</nav>
+<nav class="foot-group" aria-label="Our sites">
+<p class="foot-label">Our sites</p>
+<div class="site-groups">
+<div class="site-group">
+<a class="site-name" href="https://rvandboatstorage.co/" target="_blank" rel="noopener">rvandboatstorage.co</a>
+<ul class="foot-links">
+<li><a href="https://rvandboatstorage.co/privacy/" target="_blank" rel="noopener" aria-label="rvandboatstorage.co privacy">Privacy</a></li>
+<li><a href="https://rvandboatstorage.co/terms/" target="_blank" rel="noopener" aria-label="rvandboatstorage.co terms">Terms</a></li>
+</ul>
+</div>
+<div class="site-group">
+<a class="site-name" href="https://www.stubsued.com/" target="_blank" rel="noopener">stubsued.com</a>
+<ul class="foot-links">
+<li><a href="https://www.stubsued.com/privacy" target="_blank" rel="noopener" aria-label="stubsued.com privacy">Privacy</a></li>
+<li><a href="https://www.stubsued.com/terms" target="_blank" rel="noopener" aria-label="stubsued.com terms">Terms</a></li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</div></footer>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"r.com, Inc","url":"https://rdotcom.com","sameAs":["https://x.com/rdotcominc"]}</script>
 <script>
 (function(){var f=document.getElementById('cform'),m=document.getElementById('cmsg'),t0=Date.now();if(!f||!window.fetch)return;
